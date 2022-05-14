@@ -4,26 +4,30 @@ Console.Clear();
 Console.WriteLine("Покажем возможные значения координат в зависимости от номера плоскости.");
 Console.WriteLine();
 
-Console.WriteLine("Введите номер координатной плоскости: ");
-int planeNumber = 0;
-try
+int planeNumber;
+while (true)
 {
- planeNumber = int.Parse(Console.ReadLine()?? "0");
-}
-catch
-{
-    Console.WriteLine("Нужно вводить только цифры!!!");  
+    try
+    {
+        Console.WriteLine("Введите номер координатной плоскости: ");
+        planeNumber = int.Parse(Console.ReadLine() ?? "0");
+        break;
+    }
+    catch
+    {
+        Console.WriteLine("Нужно вводить только цифры!!!");
+    }
 }
 
-if(planeNumber == 1)
+if (planeNumber == 1)
     PrintResult("", "", planeNumber);
-else if(planeNumber == 2)
+else if (planeNumber == 2)
     PrintResult(" минус", "", planeNumber);
-else if(planeNumber == 3)
+else if (planeNumber == 3)
     PrintResult(" минус", " минус", planeNumber);
-else if(planeNumber == 4)
-    PrintResult("", " минус", planeNumber);    
-else
+else if (planeNumber == 4)
+    PrintResult("", " минус", planeNumber);
+else if (planeNumber < 1 || planeNumber > 4)
     Console.WriteLine("Введенное число не является номером плоскости");
 
 //-------------------------------Функция вывода на экран-----------------------------------------------------+
