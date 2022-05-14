@@ -20,7 +20,8 @@ while (true)
 }
 //---------------------------Вариант с тернарным оператором------------------------------------------+
 /*
-bool isTrue = planeNumber == 1 ?
+bool isTrue = false;
+isTrue = planeNumber == 1 ?
     PrintResult("", "", planeNumber):
 (planeNumber == 2)? 
     PrintResult(" минус", "", planeNumber):
@@ -33,6 +34,7 @@ bool isTrue = planeNumber == 1 ?
 if(isTrue) Console.WriteLine("Введенное число не является номером плоскости");
 */
 //---------------------------------------------------------------------------------------------------+
+
 if (planeNumber == 1)
     PrintResult("", "", planeNumber);
 else if (planeNumber == 2)
@@ -51,6 +53,6 @@ bool PrintResult(string xSign, string ySign, int planeNumber)
     Console.WriteLine($"Возможные значения координат для плоскости с номером {planeNumber}: ");
     Console.WriteLine($"x от 0 до{xSign} бесконечности");
     Console.WriteLine($"y от 0 до{ySign} бесконечности");
-    return(true);
+    return(false);
 }
 //-----------------------------------------------------------------------------------------------------------+
