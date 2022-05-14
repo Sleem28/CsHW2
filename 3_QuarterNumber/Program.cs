@@ -18,7 +18,21 @@ while (true)
         Console.WriteLine("Нужно вводить только цифры!!!");
     }
 }
+//---------------------------Вариант с тернарным оператором------------------------------------------+
+/*
+bool isTrue = planeNumber == 1 ?
+    PrintResult("", "", planeNumber):
+(planeNumber == 2)? 
+    PrintResult(" минус", "", planeNumber):
+(planeNumber == 3)? 
+    PrintResult(" минус", " минус", planeNumber): 
+(planeNumber == 4)?
+    PrintResult("", " минус", planeNumber):
+(planeNumber < 1 || planeNumber > 4)? true:false;
 
+if(isTrue) Console.WriteLine("Введенное число не является номером плоскости");
+*/
+//---------------------------------------------------------------------------------------------------+
 if (planeNumber == 1)
     PrintResult("", "", planeNumber);
 else if (planeNumber == 2)
@@ -29,12 +43,14 @@ else if (planeNumber == 4)
     PrintResult("", " минус", planeNumber);
 else if (planeNumber < 1 || planeNumber > 4)
     Console.WriteLine("Введенное число не является номером плоскости");
+    
 
 //-------------------------------Функция вывода на экран-----------------------------------------------------+
-void PrintResult(string xSign, string ySign, int planeNumber)
+bool PrintResult(string xSign, string ySign, int planeNumber)
 {
     Console.WriteLine($"Возможные значения координат для плоскости с номером {planeNumber}: ");
     Console.WriteLine($"x от 0 до{xSign} бесконечности");
     Console.WriteLine($"y от 0 до{ySign} бесконечности");
+    return(true);
 }
 //-----------------------------------------------------------------------------------------------------------+
